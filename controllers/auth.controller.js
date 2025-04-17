@@ -78,7 +78,7 @@ const revalidarToken = async (req, res = response) => {
         // Generar el JWT
         const token = await generarJWT(uid, name)
 
-        res.json({ ok: true, token })
+        res.json({ ok: true, token, uid, name })
     } catch (error) {
         console.log(error)
         res.status(500).json({ ok: false, msg: 'Por favor hable con el administrador' })
